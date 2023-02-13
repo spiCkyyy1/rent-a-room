@@ -3,12 +3,31 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.example.rentrooms.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-
-    <Label fx:id="welcomeText" />
-    <Button onAction="#onHelloButtonClick" text="Hiya" />
+<VBox alignment="CENTER" fillWidth="false" maxHeight="290.0" maxWidth="255.0" prefHeight="600.0" prefWidth="800.0" spacing="20.0" style="-fx-max-height: 100; -fx-max-width: 100;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rentrooms.HelloController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <left>
+            <Button mnemonicParsing="false" onAction="#onHelloButtonClick" text="Clerk" userData="Clerk" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </left>
+         <right>
+            <Button mnemonicParsing="false" onAction="#onHelloButtonClick" text="Manager" userData="Manager" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </right>
+         <bottom>
+            <Label fx:id="welcomeText" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
 </VBox>
