@@ -18,13 +18,30 @@ public class MainController extends Application {
 
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage primaryStage) throws IOException {
 
         Scene scene = new Scene((Parent) createManagerContent(), 800, 600);
-        stage.setTitle("Rent Rooms!");
-        stage.setScene(scene);
-        stage.show();
+        primaryStage.setTitle("Manager");
+        primaryStage.setScene(scene);
+        primaryStage.show();
 
+        Stage secondaryStage = new Stage();
+        Scene scene2 = new Scene((Parent) createClerksContent(), 800, 600);
+        secondaryStage.setTitle("First Clerk");
+        secondaryStage.setScene(scene2);
+        secondaryStage.show();
+
+        Stage thirdStage = new Stage();
+        Scene scene3 = new Scene((Parent) createManagerContent(), 800, 600);
+        thirdStage.setTitle("Second Clerk");
+        thirdStage.setScene(scene3);
+        thirdStage.show();
+
+        Stage fourthStage = new Stage();
+        Scene scene4 = new Scene((Parent) createManagerContent(), 800, 600);
+        fourthStage.setTitle("Third Clerk");
+        fourthStage.setScene(scene4);
+        fourthStage.show();
 
 //        scene = new Scene((Parent) createClerksContent(), 800, 600);
 //        stage.setTitle("Rent Rooms!");
