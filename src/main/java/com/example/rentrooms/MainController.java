@@ -2,14 +2,11 @@ package com.example.rentrooms;
 
 import javafx.application.Application;
 import javafx.concurrent.Task;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,43 +15,70 @@ public class MainController extends Application {
 
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage2) throws IOException {
 
-        Scene scene = new Scene((Parent) createManagerContent(), 800, 600);
-        primaryStage.setTitle("Manager");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        Task<Void> openManagerTask = null;
+        try {
+            openManagerTask = new Task<Void>() {
+                @Override
+                protected Void call() throws Exception {
+                    Stage primaryStage = new Stage();
+                    Scene scene = new Scene((Parent) createManagerContent(), 800, 600);
+                    primaryStage.setTitle("Manager");
+                    primaryStage.setScene(scene);
+                    primaryStage.show();
+                    return null;
+                }
+            };
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
-        Stage secondaryStage = new Stage();
-        Scene scene2 = new Scene((Parent) createClerksContent(), 800, 600);
-        secondaryStage.setTitle("First Clerk");
-        secondaryStage.setScene(scene2);
-        secondaryStage.show();
+        openManagerTask.setOnCancelled(e -> {
+            System.out.println("Cancelled!");
+        });
 
-        Stage thirdStage = new Stage();
-        Scene scene3 = new Scene((Parent) createManagerContent(), 800, 600);
-        thirdStage.setTitle("Second Clerk");
-        thirdStage.setScene(scene3);
-        thirdStage.show();
+        openManagerTask.setOnSucceeded(e -> {
+            System.out.println("Succeeded");
+        });
 
-        Stage fourthStage = new Stage();
-        Scene scene4 = new Scene((Parent) createManagerContent(), 800, 600);
-        fourthStage.setTitle("Third Clerk");
-        fourthStage.setScene(scene4);
-        fourthStage.show();
+        openManagerTask.setOnRunning(e -> {
+            System.out.println("Im running");
+        });
 
-//        scene = new Scene((Parent) createClerksContent(), 800, 600);
-//        stage.setTitle("Rent Rooms!");
-//        stage.setScene(scene);
-//        stage.show();
-    }
-    public void handle(ActionEvent event) {
-        System.out.println("Hello World!");
+        Task<Void> openClerksTask = null;
+        try {
+            openClerksTask = new Task<Void>() {
+                @Override
+                protected Void call() throws Exception {
+                    for (int i = 1; i <= 3; i++) {
+                        Stage secondaryStage = new Stage();
+                        Scene scene = new Scene((Parent) createClerksContent(), 800, 600);
+                        secondaryStage.setTitle("Clerk " + i);
+                        secondaryStage.setScene(scene);
+                        secondaryStage.show();
+                    }
+                    return null;
+                }
+            };
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
-        Stage secondStage = new Stage();
-        secondStage.setScene(new Scene(new HBox(4, new Label("Second window"))));
-        secondStage.show();
+        openClerksTask.setOnCancelled(e -> {
+            System.out.println("Cancelled!");
+        });
 
+        openClerksTask.setOnSucceeded(e -> {
+            System.out.println("Succeeded");
+        });
+
+        openClerksTask.setOnRunning(e -> {
+            System.out.println("Im running");
+        });
+
+        new Thread(openManagerTask).run();
+        new Thread(openClerksTask).run();
     }
 
     public Node createManagerContent() throws IOException {
