@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" fillWidth="false" maxHeight="290.0" maxWidth="255.0" prefHeight="600.0" prefWidth="800.0" spacing="20.0" style="-fx-max-height: 100; -fx-max-width: 100;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rentrooms.ManagerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rentrooms.ManagerController">
    <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0">
-         <right>
-            <Button mnemonicParsing="false" onAction="#onHelloButtonClick" text="Manager" userData="Manager" BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-         </right>
-         <bottom>
-            <Label fx:id="welcomeText" BorderPane.alignment="CENTER" />
-         </bottom>
-      </BorderPane>
+      <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <TableView fx:id="roomsView" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+            <TableColumn fx:id="roomnumber" prefWidth="150.0" resizable="false" text="Room Number" />
+            <TableColumn fx:id="size" prefWidth="100.0" text="Size" />
+            <TableColumn fx:id="type" prefWidth="100.0" text="Type" />
+          <TableColumn fx:id="status" prefWidth="100.0" text="Status" />
+          <TableColumn fx:id="actions" prefWidth="100.0" text="Actions" />
+        </columns>
+      </TableView>
    </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+</AnchorPane>
