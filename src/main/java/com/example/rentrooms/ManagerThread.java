@@ -26,7 +26,7 @@ public class ManagerThread implements Runnable{
 
     private Node createManagerContent() throws IOException {
         BorderPane root = new BorderPane();
-        FXMLLoader fxmlLoader = new FXMLLoader(MainController.class.getResource("manager.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(ManagerController.class.getResource("manager.fxml"));
         root.setCenter(fxmlLoader.load());
         return root;
     }

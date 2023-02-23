@@ -6,14 +6,15 @@ public class RoomsDataHandler {
     private IntegerProperty roomNum;
     private IntegerProperty roomSize;
     private StringProperty roomType;
-    private BooleanProperty roomStatus;
+    private StringProperty roomStatus;
 
-    public RoomsDataHandler(Integer roomNum, Integer roomSize, String roomType, Boolean roomStatus){
+    public RoomsDataHandler(Integer roomNum, Integer roomSize, String roomType, String roomStatus){
         setRoomNum(roomNum);
         setRoomSize(roomSize);
         setRoomType(roomType);
         setRoomStatus(roomStatus);
     }
+
 
     public IntegerProperty roomnumProperty() {
         if(roomNum == null)
@@ -33,9 +34,9 @@ public class RoomsDataHandler {
         return roomType;
     }
 
-    public BooleanProperty roomstatusProperty(){
+    public StringProperty roomstatusProperty(){
         if(roomStatus == null)
-            roomStatus = new SimpleBooleanProperty();
+            roomStatus = new SimpleStringProperty();
         return roomStatus;
     }
 
@@ -62,10 +63,10 @@ public class RoomsDataHandler {
     }
 
 
-    public void setRoomStatus(Boolean roomStatus) {
+    public void setRoomStatus(String roomStatus) {
         roomstatusProperty().setValue(roomStatus);
     }
-    public Boolean getRoomStatus() {
+    public String getRoomStatus() {
         return roomstatusProperty().getValue();
     }
 }

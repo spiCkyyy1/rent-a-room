@@ -3,7 +3,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rentrooms.ManagerController">
+<?import com.sun.javafx.scene.control.IntegerField?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rentrooms.ManagerController">
    <children>
       <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <TableView fx:id="roomsView" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -12,8 +13,22 @@
             <TableColumn fx:id="size" prefWidth="100.0" text="Size" />
             <TableColumn fx:id="type" prefWidth="100.0" text="Type" />
           <TableColumn fx:id="status" prefWidth="100.0" text="Status" />
-          <TableColumn fx:id="actions" prefWidth="100.0" text="Actions" />
         </columns>
       </TableView>
+       <HBox alignment="BOTTOM_CENTER" spacing="10" AnchorPane.bottomAnchor="0.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+           <TextField fx:id="roomNumberField" alignment="BASELINE_LEFT" prefWidth="90" promptText="Room Number" />
+           <TextField fx:id="roomSizeField" prefWidth="90" promptText="Room Size" />
+           <TextField fx:id="roomTypeField" prefWidth="150" promptText="Room Type" />
+           <ListView fx:id="statusField" prefHeight="90" prefWidth="90" />
+           <Button onAction="#addRoom" text="Add Room" />
+       </HBox>
    </children>
-</AnchorPane>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
