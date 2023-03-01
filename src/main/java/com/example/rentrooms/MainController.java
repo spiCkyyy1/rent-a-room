@@ -28,8 +28,7 @@ public class MainController extends Application {
             Thread thread2 = new Thread(clerksThread, "ClerksThread");
             thread2.run();
         });
-
-
+        
         list.addListener((ListChangeListener<RoomsDataHandler>) change -> {
             while (change.next()){
                 System.out.println("Was added? " + change.wasAdded());

@@ -10,11 +10,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 
 public class TableColumns {
-    private TableView<RoomsDataHandler> roomsView;
-    private TableColumn<RoomsDataHandler, Integer> roomnumber;
-    private TableColumn<RoomsDataHandler, Integer> size;
-    private TableColumn<RoomsDataHandler, String> type;
-    private TableColumn<RoomsDataHandler, Boolean> status;
+    private final TableView<RoomsDataHandler> roomsView;
+    private final TableColumn<RoomsDataHandler, Integer> roomnumber;
+    private final TableColumn<RoomsDataHandler, Integer> size;
+    private final TableColumn<RoomsDataHandler, String> type;
+    private final TableColumn<RoomsDataHandler, Boolean> status;
 
     public TableColumns(TableView<RoomsDataHandler> roomsView, TableColumn<RoomsDataHandler, Integer> roomnumber, TableColumn<RoomsDataHandler, Integer> size, TableColumn<RoomsDataHandler, String> type, TableColumn<RoomsDataHandler, Boolean> status) {
         this.roomsView = roomsView;
