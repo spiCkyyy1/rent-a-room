@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rentrooms.Clerks.ClerksController">
+    <children>
+        <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <TableView fx:id="roomsView" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columns>
+                <TableColumn fx:id="roomnumber" prefWidth="150.0" resizable="false" text="Room Number" />
+                <TableColumn fx:id="size" prefWidth="100.0" text="Size" />
+                <TableColumn fx:id="type" prefWidth="100.0" text="Type" />
+                <TableColumn fx:id="status" prefWidth="100.0" text="Status" />
+            </columns>
+        </TableView>
+        </children>
+        <columnConstraints>
+        <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        </rowConstraints>
+</GridPane>
 
-<TitledPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Clerks" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rentrooms.ClerksController" />
