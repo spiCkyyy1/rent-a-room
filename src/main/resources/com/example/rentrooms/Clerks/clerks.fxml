@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -13,6 +15,34 @@
                 <TableColumn fx:id="status" prefWidth="100.0" text="Status" />
             </columns>
         </TableView>
+        <HBox alignment="BASELINE_LEFT" spacing="10" AnchorPane.bottomAnchor="0.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <Label text="Search" />
+            <TextField fx:id="searchField" promptText="Search by Availability or Type">
+            <HBox.margin>
+               <Insets />
+            </HBox.margin></TextField>
+            <GridPane.margin>
+                <Insets bottom="10.0" />
+            </GridPane.margin>
+            <padding>
+                <Insets bottom="10.0" />
+            </padding>
+        </HBox>
+        <HBox alignment="BOTTOM_LEFT" spacing="10" AnchorPane.bottomAnchor="0.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <TextField fx:id="owner" alignment="BOTTOM_LEFT" prefWidth="90" promptText="Booking By" />
+            <TextField fx:id="contact" prefWidth="90" promptText="Contact" />
+            <TextField fx:id="notes" prefWidth="150" promptText="Notes" />
+            <Button onAction="#addBookingDetails" text="Add Booking" />
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+            <GridPane.margin>
+                <Insets bottom="10.0" left="5.0" top="40.0" />
+            </GridPane.margin>
+            <padding>
+                <Insets bottom="10.0" />
+            </padding>
+        </HBox>
         </children>
         <columnConstraints>
         <ColumnConstraints />
@@ -23,4 +53,3 @@
         <RowConstraints />
         </rowConstraints>
 </GridPane>
-
